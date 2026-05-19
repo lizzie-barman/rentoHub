@@ -1,0 +1,168 @@
+body{
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{
+  flex:1;
+}
+.f-info {
+    background-color: rgb(87, 121, 84);   
+    color: rgb(9, 58, 34);              
+    text-align: center;
+    min-height: 8rem;
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.f-info-links,
+.f-info-socials, .f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color:rgb(18, 46, 32);
+    margin: 0 0.2rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-socials i {
+    font-size: 1.32rem;
+    margin-right: 1rem;
+}
+
+.f-info-socials {
+    gap: 0.5rem;
+}
+
+/*for cards*/
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p{
+    font-weight:400;
+}
+
+.listing_link{
+    text-decoration: none;
+}
+
+/*Card effects*/
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: antiquewhite;
+}
+
+.show-pg{
+    height:30vh;
+}
+
+.btns-show{
+    display: flex;
+}
+
+.show-card{
+    padding:1%;
+    margin-bottom: 0%;
+}
+
+
+/* ===== CARD UPGRADE ===== */
+.listing-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card-text {
+  padding: 8px;
+}
+
+/* TITLE INSIDE CARD */
+.card-text b {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* PRICE STYLE */
+.card-text {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.fa-compass{
+  color:rgb(196, 71, 71);
+}
+.brand-title{
+  color:rgb(196, 71, 71);
+}
+.filters{
+  display:flex;
+  flex:wrap;
+  
+}
+
+.filter{
+  margin-right:2rem;
+  margin-top:1.5rem;
+  opacity:75%;
+  text-align:center;
+}
+
+.filter:hover{
+  opacity: 100%;
+  cursor:pointer;
+}
+
+.search-input{
+    border-radius: 25px;
+    font-size:0.8rem;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    border: 1px solid #ccc;
+}
+
+.search-btn i{
+  display:inline;
+  margin-right:0.25px;
+}
+
+.search-btn{
+    background-color: rgb(196, 71, 71);
+    color: white;
+    border-radius: 50px;
+    border: none;
+    padding: 0.5rem 1.2rem;
+}
+
+.search-btn:hover{
+    background-color: rgb(170, 55, 55);
+}

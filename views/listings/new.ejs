@@ -1,0 +1,117 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row mt-3">
+  <div class="col-8 offset-2"><!--col-8 makes the input area smaller and offset brings the content to the middle of the page-->
+    <h3><b>Creating a new listing</b></h3>
+    
+    <form action="/listings" method="POST" class="needs-validation" novalidate enctype="multipart/form-data"><!--the needs-validation class ke madad se hi bootsrap se personalised warnings likh rhe and novaidate is an HTML attribute disabling browser's validation UI and enctype se we are getting the form mei image upload ka option for cloud like storage-->
+  <div class="mb-2"> <!--mb is a bootstrap class meaning margin bottom in each div is for gap below individual elements, similarly mt meaning margin top exists too-->
+    <label for="title" class="form-label">Title</label>
+    <input 
+      type="text"
+      class="form-control"
+      id="title"
+      name="listing[title]"  
+      placeholder="Enter title"
+      required
+    >
+    <div class="invalid-feedback">
+      Please provide a title.
+    </div>
+    <div class="valid-feedback">Nice title!</div> <!--valid-feedback is a bootstrap class to add msgs when value is given.-->
+  </div>
+
+  <div class="mb-2">
+    <label for="description" class="form-label">Description</label>
+    <input 
+      type="text"
+      class="form-control"
+      id="description"
+      name="listing[description]" 
+      placeholder="Enter description"
+      required
+    >
+    <div class="invalid-feedback">Short description required.</div> <!--bootstrap class-->
+  </div>
+
+<!-- <div class="mb-2">
+    <label for="image" class="form-label">Image URL</label>
+    <input 
+        type="text" 
+        class="form-control"  
+        name="listing[image]" 
+        placeholder="Enter image URL(leaving it blank will add a default image)"
+    >
+    <div class="invalid-feedback">Please provide a valid image URL.</div>
+</div> -->
+
+<div class="mb-2">
+    <label for="image" class="form-label"> Upload Image</label>
+    <input 
+        type="file" 
+        class="form-control"  
+        name="listing[image]" 
+    >
+    <div class="invalid-feedback">Please provide a valid image.</div>
+</div>
+
+
+<div class="row">
+  <div class="mb-2 col-md-5">
+    <label for="price" class="form-label">Price</label>
+    <input type="number" class="form-control" id="price" name="listing[price]" placeholder="Enter price" required>
+    <div class="invalid-feedback">Price should be valid.</div>
+  </div>
+
+
+  <div class="mb-2 col-md-7">
+    <label for="location" class="form-label">Location</label>
+    <input 
+      type="text"
+      class="form-control"
+      id="location"
+      name="listing[location]" 
+      placeholder="Enter location"
+      required
+    >
+    <div class="invalid-feedback">Location required.</div>
+  </div>
+</div>
+  <div class="mb-2">
+    <label for="country" class="form-label">Country</label>
+    <input 
+      type="text"
+      class="form-control"
+      id="country"
+      name="listing[country]" 
+      placeholder="Enter country"
+      required
+    >
+    <div class="invalid-feedback">Country name required.</div>
+  </div>
+  <button type="submit" class="btn btn-dark">Create Listing</button>
+  <br></br>
+</form>
+
+<!-- Bootstrap JS bundle (includes Popper) --> 
+<!--this basically is to make our custom warnings of fill up the form rather than using browsers default ones.-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(() => {
+  'use strict'
+
+  const forms = document.querySelectorAll('.needs-validation')
+
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+  </div>
+</div>
+</html>
