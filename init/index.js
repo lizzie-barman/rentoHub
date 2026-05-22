@@ -4,7 +4,12 @@ const initData = require("./data.js");
 const Listing = require ("../models/listing.js");
 const Review = require("../models/review.js");
 
-require("dotenv").config({ path: "../.env" });
+//require("dotenv").config({ path: "../.env" });
+
+require("dotenv").config({
+    path: require("path").resolve(__dirname, "../.env"),
+});
+
 main()
     .then(()=>{
        console.log("Connected to DB");
@@ -17,7 +22,7 @@ async function main(){
 }
 
 const initDB = async ()=>{
-    //await Listing.deleteMany({});
+    await Listing.deleteMany({});
     await Review.deleteMany({});
     initData.data = initData.data.map((obj) => ({
         ...obj,

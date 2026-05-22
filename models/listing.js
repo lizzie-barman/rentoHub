@@ -31,7 +31,8 @@ const listingSchema = new Schema({
     owner: {
         type: Schema.Types.ObjectId,
         ref: "User"
-    }
+    },
+    category : [String],
 });
 
 //making logic that if a listing is deleted, the reviews of that listing is delete with it.

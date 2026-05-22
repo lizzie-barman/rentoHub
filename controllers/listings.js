@@ -1,11 +1,22 @@
 const Listing = require("../models/listing");
 
 // to get home page
-module.exports.index = async (req,res) =>{
-    const allListings = await Listing.find({});
-    res.render("listings/index", {allListings});
-}; 
+// module.exports.index = async (req,res) =>{
+//     const allListings = await Listing.find({});
+//     res.render("listings/index", {allListings});
+// }; 
 
+
+module.exports.index = async(req,res) =>{
+    const categ = req.query.category;
+    let allListings;
+    if(!categ){
+        allListings = await Listing.find({});
+    } else{
+        allListings = await Listing.find({category: categ});
+    }
+    res.render("listings/index", {allListings});
+}
 // to get new listing form
 module.exports.getNewForm = async(req,res)=>{
     res.render("listings/new");
@@ -13,6 +24,11 @@ module.exports.getNewForm = async(req,res)=>{
 
 //to post new listing info
 module.exports.createNew = async(req,res,next)=>{ 
+
+    if(typeof req.body.listing.category === "string"){
+        req.body.listing.category = [req.body.listing.category];
+        console.log(req.body.listing.category);
+    }
     const newListing = new Listing(req.body.listing);
     if(req.file){
         newListing.image = {

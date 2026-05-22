@@ -12,6 +12,7 @@ module.exports.listingSchema = Joi.object({
         image: Joi.object(
             { url: Joi.string().uri().allow("") }
         ),
+        category: Joi.alternatives().try(Joi.array().items(Joi.string()), Joi.string()).required(),
     }).required()
 });
 

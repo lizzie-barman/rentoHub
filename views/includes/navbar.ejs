@@ -1,28 +1,87 @@
-<nav class="navbar navbar-expand-md bg-white border-bottom sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand bg-red"><i class="fa-solid fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top shadow-sm">
+
+  <div class="container-fluid px-4">
+
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="/listings">
+      <i class="fa-solid fa-bed me-2 brand-icon"></i>
+      <span class="brand-name">RentoHub</span>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarNavAltMarkup"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Navbar Content -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link ms-center" href="/listings"><b>Explore</b></a>
+
+      <!-- Left Navigation -->
+      <div class="navbar-nav align-items-center">
+
+        <a class="nav-link fw-semibold" href="/listings">
+          Explore
+        </a>
+
+        <a class="nav-link fw-semibold" href="/listings/new">
+          Add Stay
+        </a>
+
       </div>
-      <form class="d-flex ms-auto" role="search">
-        <input class="form-control me-2 search-input" type="search" placeholder="Search"aria-label="Search"/>
-        <button class="search-btn" type="submit">Search</button>
-      </form>
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Add New</a>
-        <% if(!currUser){ %>
-            <a class="nav-link" href="/signup"><b>Signup</b></a>
-            <a class="nav-link" href="/login"><b>Login</b></a>
-        <% } %>
-        <% if(currUser){ %>
-            <a class="nav-link" href="/logout"><b>Logout</b></a>
-        <% } %>
-        
+
+      <!-- Right Section -->
+      <div class="d-flex align-items-center ms-auto flex-wrap gap-2">
+
+        <!-- Search Bar -->
+        <form class="d-flex align-items-center" role="search">
+
+          <input 
+            class="form-control search-input me-2" 
+            type="search" 
+            placeholder="Search PGs, hostels..." 
+            aria-label="Search"
+          />
+
+          <button class="search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+        </form>
+
+        <!-- Auth Buttons -->
+        <div class="navbar-nav align-items-center">
+
+          <% if(!currUser){ %>
+
+            <a class="nav-link fw-semibold" href="/signup">
+              Signup
+            </a>
+
+            <a class="nav-link fw-semibold" href="/login">
+              Login
+            </a>
+
+          <% } %>
+
+          <% if(currUser){ %>
+
+            <a class="nav-link fw-semibold" href="/logout">
+              Logout
+            </a>
+
+          <% } %>
+
+        </div>
+
       </div>
+
     </div>
+
   </div>
+
 </nav>

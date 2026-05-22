@@ -1,32 +1,100 @@
 <% layout("/layouts/boilerplate") %>
-    
-    <!-- use can even use mt mb, they are bootstrap classes meaning margin top and margin bottom-->
-    <div class="filters">
-        <div class="filter"><i class="fa-solid fa-fire"></i><p><b>Trending</b></p></div>
-        <div class="filter"><i class="fa-solid fa-umbrella-beach"></i><p><b>Beach</b></p></div>
-        <div class="filter"><i class="fa-solid fa-mountain"></i><p><b>Hills</b></p></div>
-    </div>
-    <div class="row g-4 row-cols-lg-4 row-cols-md-2 row-cols-sm-1"> <!--to change the layout as per screen size-->
-        <% for(let listing of allListings) { %>
-            <a href="/listings/<%=listing._id%>" class="listing_link">
-            <div class="card col listing-card" >
-                <img src="<%= listing.image.url%>" class="card-img-top" alt="listing_image" style="height: 15rem" /> <!--to style how the image looks-->
+
+<div class="filters-container">
+
+    <a href="/listings?category=PG" class="filter-link">
+        <div class="filter">
+            <i class="fa-solid fa-building"></i>
+            <span>PG</span>
+        </div>
+    </a>
+
+    <a href="/listings?category=Hostels" class="filter-link">
+        <div class="filter">
+            <i class="fa-solid fa-bed"></i>
+            <span>Hostels</span>
+        </div>
+    </a>
+
+    <a href="/listings?category=Shared" class="filter-link">
+        <div class="filter">
+            <i class="fa-solid fa-users"></i>
+            <span>Shared</span>
+        </div>
+    </a>
+
+    <a href="/listings?category=Budget" class="filter-link">
+        <div class="filter">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Budget</span>
+        </div>
+    </a>
+
+    <a href="/listings?category=Students" class="filter-link">
+        <div class="filter">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Students</span>
+        </div>
+    </a>
+
+    <a href="/listings?category=Pet" class="filter-link">
+        <div class="filter">
+            <i class="fa-solid fa-paw"></i>
+            <span>Pet</span>
+        </div>
+    </a>
+
+    <a href="/listings?category=Couple" class="filter-link">
+        <div class="filter">
+            <i class="fa-solid fa-children"></i>
+            <span>Couple</span>
+        </div>
+    </a>
+
+    <a href="/listings?category=Parking" class="filter-link">
+        <div class="filter">
+            <i class="fa-solid fa-car"></i>
+            <span>Parking</span>
+        </div>
+    </a>
+
+    <a href="/listings?category=Furnished" class="filter-link">
+        <div class="filter">
+            <i class="fa-solid fa-couch"></i>
+            <span>Furnished</span>
+        </div>
+    </a>
+
+    <a href="/listings?category=Girls Only" class="filter-link">
+        <div class="filter">
+            <i class="fa-solid fa-venus"></i>
+            <span>Girls Only</span>
+        </div>
+    </a>
+
+    <a href="/listings?category=Boys Only" class="filter-link">
+        <div class="filter">
+            <i class="fa-solid fa-mars"></i>
+            <span>Boys Only</span>
+        </div>
+    </a>
+</div>
+
+
+<div class="row g-4 row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+    <% for(let listing of allListings) { %>
+        <a href="/listings/<%= listing._id %>" class="listing_link">
+            <div class="card col listing-card">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 15rem">
                 <div class="card-img-overlay"></div>
-                
                 <div class="card-body">
-                    <p class="card-text">
-                        <b> <%=listing.title %></b>
-                    <br>
-                        &#8377; <%=listing.price.toLocaleString("en-IN")%>/night
-                       
+                    <p class="card-text"><b><%= listing.title %></b>
+                        <br>
+                        &#8377; <%= listing.price.toLocaleString("en-IN") %> / month
                     </p>
                 </div>
-            </div></a>
-            <% } %>
+            </div>
+        </a>
+    <% } %>
 
-    </div>
-
-  
-</script>
-</script>
-
+</div>
