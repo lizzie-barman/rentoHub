@@ -50,73 +50,40 @@
                 <div class="mb-3">
                     <label class="form-label">Categories</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="PG" name="listing[category]" id="pg">
+                        <input class="form-check-input" type="checkbox" value="PG" name="listing[category]" id="pg"
+                        <%= listing.category.includes("PG") ? "checked" : "" %>>
                         <label class="form-check-label" for="pg">PG</label>
                     </div>
 
                 <div class="form-check">
-                    <input 
-            class="form-check-input"
-            type="checkbox"
-            value="Hostels"
-            name="listing[category]"
-            id="hostel"
-        >
-        <label class="form-check-label" for="hostel">
-            Hostels
-        </label>
-    </div>
+                    <input class="form-check-input" type="checkbox" value="Hostels" name="listing[category]" id="hostel"
+                    <%= listing.category.includes("Hostels") ? "checked" : "" %> >
+                    <label class="form-check-label" for="hostel">Hostels</label>
+                </div>
+
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Shared" name="listing[category]" id="shared"
+                <%= listing.category.includes("Shared") ? "checked" : "" %>>
+                <label class="form-check-label" for="shared"> Shared</label>
+                </div>
 
     <div class="form-check">
         <input 
-            class="form-check-input"
-            type="checkbox"
-            value="Shared"
-            name="listing[category]"
-            id="shared"
-        >
-        <label class="form-check-label" for="shared">
-            Shared
-        </label>
+            class="form-check-input" type="checkbox" value="Budget"  name="listing[category]" id="budget"
+            <%= listing.category.includes("Budget") ? "checked" : "" %> >
+        <label class="form-check-label" for="budget"> Budget </label>
     </div>
 
     <div class="form-check">
-        <input 
-            class="form-check-input"
-            type="checkbox"
-            value="Budget"
-            name="listing[category]"
-            id="budget"
-        >
-        <label class="form-check-label" for="budget">
-            Budget
-        </label>
+        <input  class="form-check-input" type="checkbox" value="Students" name="listing[category]" id="students"
+        <%= listing.category.includes("Students") ? "checked" : "" %> >
+        <label class="form-check-label" for="students">  Students </label>
     </div>
 
     <div class="form-check">
-        <input 
-            class="form-check-input"
-            type="checkbox"
-            value="Students"
-            name="listing[category]"
-            id="students"
-        >
-        <label class="form-check-label" for="students">
-            Students
-        </label>
-    </div>
-
-    <div class="form-check">
-        <input 
-            class="form-check-input"
-            type="checkbox"
-            value="Pet-Friendly"
-            name="listing[category]"
-            id="Pet-Friendly"
-        >
-        <label class="form-check-label" for="Pet-Friendly">
-            Pet-Friendly
-        </label>
+        <input class="form-check-input"  type="checkbox" value="Pet" name="listing[category]" id="Pet"
+            <%= listing.category.includes("Pet") ? "checked" : "" %> >
+        <label class="form-check-label" for="Pet"> Pet </label>
     </div>
 
     <div class="form-check">
@@ -126,6 +93,7 @@
             value="Couple"
             name="listing[category]"
             id="Couple"
+            <%= listing.category.includes("Couple") ? "checked" : "" %>
         >
         <label class="form-check-label" for="Couple">
             Couple
@@ -139,6 +107,7 @@
             value="Parking"
             name="listing[category]"
             id="Parking"
+            <%= listing.category.includes("Parking") ? "checked" : "" %>
         >
         <label class="form-check-label" for="Parking">
             Parking
@@ -146,42 +115,21 @@
     </div>
 
     <div class="form-check">
-    <input 
-        class="form-check-input"
-        type="checkbox"
-        value="Furnished"
-        name="listing[category]"
-        id="Furnished"
-    >
-    <label class="form-check-label" for="Furnished">
-        Furnished
-    </label>
-</div>
+        <input   class="form-check-input" type="checkbox" value="Furnished" name="listing[category]" id="Furnished"
+        <%= listing.category.includes("Furnished") ? "checked" : "" %>>
+        <label class="form-check-label" for="Furnished"> Furnished </label>
+    </div>
 
-<div class="form-check">
-    <input 
-        class="form-check-input"
-        type="checkbox"
-        value="Girls-Only"
-        name="listing[category]"
-        id="GirlsOnly"
-    >
-    <label class="form-check-label" for="GirlsOnly">
-        Girls-Only
-    </label>
-</div>
+    <div class="form-check">
+        <input  class="form-check-input" type="checkbox"  value="Girls Only" name="listing[category]" id="Girls Only"
+        <%= listing.category.includes("Girls Only") ? "checked" : "" %>>
+        <label class="form-check-label" for="Girls Only"> Girls Only </label>
+    </div>
 
-<div class="form-check">
-    <input 
-        class="form-check-input"
-        type="checkbox"
-        value="Boys-Only"
-        name="listing[category]"
-        id="BoysOnly"
-    >
-    <label class="form-check-label" for="BoysOnly">
-        Boys-Only
-    </label>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="Boys Only" name="listing[category]" id="Boys Only" 
+        <%= listing.category.includes("Boys Only") ? "checked" : "" %>>
+        <label class="form-check-label" for="BoysOnly">Boys Only</label>
 </div>
 
 </div>

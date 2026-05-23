@@ -8,14 +8,26 @@ const Listing = require("../models/listing");
 
 
 module.exports.index = async(req,res) =>{
+
     const categ = req.query.category;
-    let allListings;
-    if(!categ){
-        allListings = await Listing.find({});
-    } else{
-        allListings = await Listing.find({category: categ});
+    const search = req.query.search;
+
+    let query = {};
+    if(categ){
+        query.category= categ;
     }
-    res.render("listings/index", {allListings});
+
+    if(search){
+        query.$or = [
+            { title: { $regex: search, $options: "i" } },
+            { location: { $regex: search, $options: "i" } },
+            { category: { $regex: search, $options: "i" } }
+        ];
+    }
+
+    let allListings = await Listing.find(query);
+
+    res.render("listings/index", {allListings, currCategory:categ});
 }
 // to get new listing form
 module.exports.getNewForm = async(req,res)=>{
@@ -27,7 +39,6 @@ module.exports.createNew = async(req,res,next)=>{
 
     if(typeof req.body.listing.category === "string"){
         req.body.listing.category = [req.body.listing.category];
-        console.log(req.body.listing.category);
     }
     const newListing = new Listing(req.body.listing);
     if(req.file){
