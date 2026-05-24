@@ -4,6 +4,10 @@ RentoHub is a full-stack rental listing platform designed for especially student
 
 The platform allows users to explore the listings, upload properties, manage their own stays, leave reviews, and search accommodations using flexible regex-based search and category filters.
 
+## 🌐 Live Demo
+
+[Visit RentoHub](https://rentohub.onrender.com)
+
 
 ## 🚀 Key Features
 
